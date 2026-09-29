@@ -1,0 +1,17 @@
+network:
+  version: 2
+  ethernets:
+    cyber0:
+      match:
+        name: "en*"
+      dhcp4: false
+      addresses:
+        - 10.10.10.7/24
+      routes:
+        - to: default
+          via: 10.10.10.1
+      nameservers:
+        addresses:
+          - 10.10.10.1
+          - 8.8.8.8
+      optional: true

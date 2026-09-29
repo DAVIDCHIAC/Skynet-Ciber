@@ -1,0 +1,2 @@
+# CYBERQUEST :: dyson_m gestiona el yacimiento de logs (documentos del nodo)
+dyson_m ALL=(root) NOPASSWD: /usr/bin/vim, /usr/bin/vi

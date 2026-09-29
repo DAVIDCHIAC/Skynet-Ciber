@@ -1,0 +1,20 @@
+NUCLEO :: ORDEN DE EJECUCION v0x07
+=====================================
+PISTA_3 :: inteligencia de campo
+
+El nucleo Skynet tiene MASCARA: se valida la concatenacion de los cinco
+fragmentos de bandera (en orden de mision) junto con la ORDEN exacta.
+Para la mision de la imagen: la pregunta se ha ocultado en los
+coeficientes del JPEG. La respuesta es una persona. Esa misma respuesta
+abre el ARCA (bandera_nodo.zip).
+
+ORDEN (traduccion de la red):
+Uld3Z1lYUmhjWFZsSUdWeklHRWdiR0Z6SURRNk1EQT0=
+Deberias leerlo dos veces para que el CyberChef devuelva la orden exacta.
+
+FRAGMENTO_3=NucleoRojo{RU5FIE1VQ0hP}
+
+RETO_EXTRA (Cesar/ROT13 si te sobran puntos):
+CESAR::ry nepba qr yn erfvfgrapvn fr noer pba wbua pbaabe
+
+-- fin orden --

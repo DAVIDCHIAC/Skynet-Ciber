@@ -1,0 +1,11 @@
+NOTA DEL BASTION :: 2026-09-11
+
+El ARCA no se distribuye. La evidencia de vigilancia
+(captura_terminador.jpg) viajo por la red durante la ultima
+sincronizacion; queda guardada en el archivo del nodo webserver.
+
+Alguien con acceso a la red saco la pregunta que se oculta en
+los coeficientes del JPEG que cruzo el cable. Responderla
+correctamente abre el paquete del ARCA (bandera_nodo.zip).
+
+No almacenar mas evidencia en este equipo. -- M-07

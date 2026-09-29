@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /nucleo/
+Disallow: /archivo/pcap/
+
+# Fragmento_2=NucleoRojo{RU5DSUEgVEk}
+# no indexar el material de evidencias ni la configuracion cifrada del nucleo.

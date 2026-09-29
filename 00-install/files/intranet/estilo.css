@@ -1,0 +1,73 @@
+/* estilo.skynet.css :: hoja del nodo central */
+:root {
+  --rojo: #c1121f;
+  --oscuro: #0b0d10;
+  --gris: #a8adb3;
+  --brillo: #f2f4f8;
+  --mono: "Consolas", "DejaVu Sans Mono", monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: linear-gradient(180deg, #0b0d10 0%, #131720 100%);
+  color: var(--gris);
+  font-family: "Segoe UI", Verdana, sans-serif;
+  min-height: 100vh;
+}
+header {
+  background: rgba(10, 12, 16, 0.9);
+  border-bottom: 2px solid var(--rojo);
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; top: 0;
+}
+header .logo { color: var(--brillo); font-family: var(--mono); font-size: 22px; letter-spacing: 3px; }
+header .logo span { color: var(--rojo); }
+nav a {
+  color: var(--gris);
+  text-decoration: none;
+  margin-left: 22px;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+nav a:hover { color: var(--rojo); border-bottom: 1px solid var(--rojo); }
+main { padding: 48px 40px; max-width: 980px; margin: 0 auto; }
+h1, h2, h3 { color: var(--brillo); font-family: var(--mono); letter-spacing: 1px; }
+h1 { font-size: 26px; border-left: 4px solid var(--rojo); padding-left: 14px; }
+h2 { font-size: 18px; margin: 26px 0 12px; }
+p { line-height: 1.65; margin: 12px 0; }
+a { color: #e2606a; }
+.tarjeta {
+  background: #171c24;
+  border: 1px solid #262d38;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 18px 0;
+}
+.tarjeta .etiqueta { color: var(--rojo); font-family: var(--mono); font-size: 12px; }
+.mono { font-family: var(--mono); font-size: 13px; }
+.fila { display: flex; gap: 28px; flex-wrap: wrap; }
+.campo { flex: 1; min-width: 220px; }
+.estado {
+  display: inline-block; padding: 2px 10px; border-radius: 999px;
+  font-family: var(--mono); font-size: 12px;
+}
+.estado.on { background: #12351c; color: #7ee08a; border: 1px solid #2e7d3a; }
+.estado.off { background: #3a1317; color: #ff8091; border: 1px solid #8f2b33; }
+footer {
+  border-top: 1px solid #1d232c;
+  padding: 22px 40px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: #5c6570;
+}
+.alerta {
+  background: rgba(193, 18, 31, 0.12);
+  border: 1px solid #7c2028;
+  padding: 14px 18px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  color: #ffb3ba;
+}

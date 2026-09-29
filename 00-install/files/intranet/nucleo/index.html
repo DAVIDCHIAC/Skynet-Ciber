@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nucleo cifrado :: configuracion</title>
+  <link rel="stylesheet" href="/estilo.css">
+</head>
+<body>
+  <header>
+    <div class="logo">SKY<span>NET</span> :: NODO&nbsp;07</div>
+    <nav>
+      <a href="/">INICIO</a>
+      <a href="/personal.html">PERSONAL</a>
+      <a href="/archivo/">ARCHIVO</a>
+      <a href="/nucleo/">NUCLEO</a>
+      <a href="/admin/">ADMIN</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Configuraci&oacute;n del n&uacute;cleo</h1>
+    <p>
+      El canal del n&uacute;cleo usa cifrado h&iacute;brido: una llave RSA
+      512-bit con elemento de sesi&oacute;n, y el material cifrado en el
+      <em>ruido</em> de las comunicaciones. Los ficheros son p&uacute;blicos
+      para los nodos autenticados del cl&uacute;ster.
+    </p>
+
+    <div class="tarjeta">
+      <p class="etiqueta">FICHEROS (DESCARGABLES)</p>
+      <p class="mono">
+        <a href="/nucleo/nucleo.conf">nucleo.conf</a>&nbsp;&middot;&nbsp; parametros publicos (e, n)<br>
+        <a href="/nucleo/nucleo.conf.enc">nucleo.conf.enc</a>&nbsp;&middot;&nbsp; cifrado RSA<br>
+        <a href="/nucleo/ruido.enc">ruido.enc</a>&nbsp;&middot;&nbsp; orden cifrada (OpenSSL AES-256-CBC -pbkdf2)
+      </p>
+    </div>
+
+    <div class="tarjeta">
+      <p class="etiqueta">REPORTE 09/11 &mdash; CIRCUITO DE PASO</p>
+      <p class="mono">
+        ORDEN_FINAL  : oculta en ruido de comunicaciones<br>
+        CONTENEDOR   : base64 (doble) sobre el canal de texto<br>
+        COMPLEMENTO  : M-3000 rota 13 posiciones en el alfabeto<br><br>
+        &gt; si la orden parece irrelevante, prueba el DESPLAZAMIENTO<br>
+        &gt; clasico CYBERDYNE antes de descifrar (y vuelve a mirar la base64)
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    (c) 2026 SKYNET DYNAMICS &mdash; DIVISION MILES-3000 &mdash; NODO 07
+  </footer>
+</body>
+</html>

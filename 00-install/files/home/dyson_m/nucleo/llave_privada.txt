@@ -1,0 +1,5 @@
+PRIVATE_KEY v1
+# material privado del nodo (ROBADO a Skynet)
+p=12984428488499506957
+q=15907979499344610703
+e=65537

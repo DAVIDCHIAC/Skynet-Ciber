@@ -1,0 +1,13 @@
+ANALISIS DE TRAPFICO :: pista 2
+
+Bueno, corri el reporte que me paso el jefe y la captura
+red_skynet.pcap tiene 10 tramas. Un GET, una imagen, un zip.
+
+Si el analista quiere saber QUE levanto el webserver durante
+la sincronizacion, con tcpdump/wireshark y un par de filtros
+tiene el arbol completo del archivo.
+
+Nota clave: dentro del evidencia.zip el corrector espera
+leer las banderas EN ORDEN. El orden correcto no se adivina:
+lo dicta la FRASE del nucleo y hay que romper el cifrado
+para tenerla completa.

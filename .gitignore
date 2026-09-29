@@ -1,0 +1,11 @@
+# Entregable grande (se distribuye como Release, GitHub admite max 100 MB)
+*.ova
+
+# Python
+__pycache__/
+*.pyc
+
+# Temporales de build / demo / logs
+*.log
+_vres*
+*.tmp

@@ -1,0 +1,8 @@
+PISTA_1 :: TRANSMISION INTERCEPTADA DEL ANALISTA "OJODEDIOS"
+
+{PROTOCOLO:0x07}
+
+PREGUNTA: ¿Cual es el nombre de la persona que esta al lado del terminator?
+
+[SUB-PROTOCOLO] La respuesta abre el ARCA. Usala tal cual, respetando
+mayusculas y la posicion de la palabra.
