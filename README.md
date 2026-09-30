@@ -24,6 +24,7 @@ Skynet-Ciber/
 │   ├── build_artifacts.py       #   genera M3 (RSA/AES-CBC/b64/zip/pcap)
 │   ├── exif_inject.py           #   inyecta EXIF/APP1 sin re-codificar el JPEG
 │   ├── rsa_tool.py              #   descifrador RSA del atacante (Euclides)
+│   ├── dir.txt                  #   wordlist demo para gobuster (este repo)
 │   └── test_end_to_end.py       #   valida TODA la cadena sobre 00-install/files
 └── docs/
     ├── RedTeam_AfterAction.md   #   informe del ataque (entrega del equipo)
@@ -102,8 +103,12 @@ VBoxManage hostonlyif ipconfig "VirtualBox Host-Only Ethernet Adapter #2" \
 nmap -sV -sC 10.10.10.7
 #   80/tcp  Python SimpleHTTP (intranet)
 #   22/tcp  OpenSSH  (banner SKYNET INTRA NET NODO 07)
-gobuster dir -u http://10.10.10.7 -w dir.txt
+gobuster dir -u http://10.10.10.7 -w tools/dir.txt
 #   /robots.txt  /personal.html  /archivo/  /nucleo/  /admin/
+
+> El diccionario `tools/dir.txt` va incluido en este repositorio (prueba en el
+> Kali tenerlo en el mismo directorio). Alternativa clásica en Kali:
+> `-w /usr/share/wordlists/dirb/common.txt`.
 ```
 
 **F2** se lee en `robots.txt`:
