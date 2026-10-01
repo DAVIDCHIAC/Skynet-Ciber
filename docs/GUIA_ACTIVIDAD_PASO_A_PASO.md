@@ -33,6 +33,32 @@
 | — | `nucleo.conf`, `nucleo.conf.enc`, `ruido.enc` | `orden.txt` (al descifrar) |
 | — | `llave_privada.txt` (por scp/SSH) | — |
 
+### 0.1 · Registro de banderas — qué hacer con ellas (LEER YA)
+
+Cada misión te da **un fragmento** en formato `NucleoRojo{...}` (F1, F2, F3,
+F4, F5). **Tienes que guardarlos todos**, copiados EXACTAMENTE como aparecen
+(mayúsculas, llaves, sin espacios sobrantes).
+
+Método sencillo: abre un **bloc de notas** (o una hoja de papel) y pega cada
+bandera cuando la encuentres, junto con su número. Te quedará algo así:
+
+```
+F1 = NucleoRojo{TEEgUkVTSVNU}
+F2 = NucleoRojo{RU5DSUEgVEk}
+F3 = ...
+F4 = ...
+F5 = ...
+ORDEN = El ataque es a las 4:00
+```
+
+¿Para qué sirven al final? El paso 15 los **usa todos**: con ellos se
+reconstruye el **ADN del núcleo** (decodificando y uniendo los fragmentos en
+orden) y se valida la misión. Si falta una bandera, está mal copiada o va en
+desorden → la validación **falla** (`CHECKSUM NO COINCIDE`). Por eso **cópialas
+al momento** en cada misión; no confíes en la memoria.
+
+> Plantilla listo para rellenar en el **Anexo D**.
+
 ---
 
 ## 1. Preparar la MÁQUINA ATACANTE (Kali): instalar todo (solo la primera vez)
@@ -186,7 +212,7 @@ curl -s http://10.10.10.7/robots.txt
 
 → Espera: `Fragmento_2=NucleoRojo{RU5DSUEgVEk}`
 
-**Anota: F2 = `NucleoRojo{RU5DSUEgVEk}`**
+**Copia en tu registro (paso 0.1): F2 = `NucleoRojo{RU5DSUEgVEk}`**
 
 ---
 
@@ -282,7 +308,7 @@ logout
    ```
    → Espera: `FRAGMENTO_3=NucleoRojo{RU5FIE1VQ0hP}` y una cadena base64.
 
-   **Anota: F3 = `NucleoRojo{RU5FIE1VQ0hP}`**
+   **Copia en tu registro (paso 0.1): F3 = `NucleoRojo{RU5FIE1VQ0hP}`**
 
 4. Decodifica la cadena **dos veces** con base64:
    ```bash
@@ -303,7 +329,7 @@ logout
    ```
    → Espera: `Image Description : NucleoRojo{TEEgUkVTSVNU}`
 
-   **Anota: F1 = `NucleoRojo{TEEgUkVTSVNU}`**
+   **Copia en tu registro (paso 0.1): F1 = `NucleoRojo{TEEgUkVTSVNU}`**
 
 2. La foto oculta además un mensaje (esteganografía DCT). Extráelo:
    ```bash
@@ -333,7 +359,7 @@ logout
    ```
    → Espera: `NucleoRojo{UyBST1NUUk9T}`
 
-   **Anota: F4 = `NucleoRojo{UyBST1NUUk9T}`**
+   **Copia en tu registro (paso 0.1): F4 = `NucleoRojo{UyBST1NUUk9T}`**
 
 4. Lee la pista de escalada:
    ```bash
@@ -364,7 +390,7 @@ logout
    ```
    → Espera: `NucleoRojo{XzAxMTA}`
 
-   **Anota: F5 = `NucleoRojo{XzAxMTA}`**
+   **Copia en tu registro (paso 0.1): F5 = `NucleoRojo{XzAxMTA}`**
 
 ---
 
@@ -391,6 +417,21 @@ FRASE RECONSTRUIDA (ADN): LA RESISTENCIA TIENE MUCHOS ROSTROS_0110
 >>> NUCLEO VERIFICADO CON EXITO <<<
 ```
 
+### ¿Qué hace `nucleo.sh` con tus banderas? (para contarlo en clase)
+
+1. Pide las **5 banderas** (una por línea, en orden **F1→F5**, formato
+   `NucleoRojo{...}`).
+2. Pide la **ORDEN NUCLEAR** (`El ataque es a las 4:00`).
+3. **Decodifica cada fragmento con Base64** y los **concatena**:
+   `TEEgUkVTSVNU` + `RU5DSUEgVEk` + ... = **LA RESISTENCIA TIENE MUCHOS
+   ROSTROS_0110** (el **ADN** del núcleo).
+4. Une ese ADN con la ORDEN y calcula un hash (SHA-512).
+5. Si el hash coincide con el esperado → **`NUCLEO VERIFICADO CON EXITO`**.
+
+Por eso **tener las 5 banderas completas, bien copiadas y en orden es el
+objetivo real del ejercicio**: sin una de ellas, la reconstrucción del ADN es
+imposible y la validación falla.
+
 ¡Misión completada!
 
 ---
@@ -406,6 +447,10 @@ FRASE RECONSTRUIDA (ADN): LA RESISTENCIA TIENE MUCHOS ROSTROS_0110
 - [ ] `captura_terminador.jpg` · `bandera_nodo.zip` (paso 4)
 - [ ] `nucleo.conf` · `nucleo.conf.enc` · `ruido.enc` (paso 4)
 - [ ] `llave_privada.txt` (paso 11, vía scp)
+
+**Banderas registradas (paso 0.1):**
+- [ ] F1 · F2 · F3 · F4 · F5 copiadas en el registro
+- [ ] ORDEN NUCLEAR anotada
 
 ## Anexo B · Datos de referencia (para imprimir)
 
@@ -424,7 +469,18 @@ FRASE RECONSTRUIDA (ADN): LA RESISTENCIA TIENE MUCHOS ROSTROS_0110
 | ADN | `LA RESISTENCIA TIENE MUCHOS ROSTROS_0110` |
 | Escalada | `sudo vim -c ':!/bin/bash'` |
 
-## Anexo C · Problemas frecuentes (y su arreglo)
+## Anexo D · Mis banderas (plantilla para rellenar)
+
+| # | Bandera | Lugar donde la encontré |
+|---|---|---|
+| F1 | `NucleoRojo{...}` | EXIF de `captura_terminador.jpg` |
+| F2 | `NucleoRojo{...}` | `robots.txt` |
+| F3 | `NucleoRojo{...}` | `orden.txt` (descifrado del ruido) |
+| F4 | `NucleoRojo{...}` | EXIF de `bandera.jpg` (dentro del zip) |
+| F5 | `NucleoRojo{...}` | `/root/nucleo/FLAG5.txt` (root) |
+| ORDEN | `El ataque es a las 4:00` | doble Base64 en `orden.txt` |
+
+## Anexo E · Problemas frecuentes (y su arreglo)
 
 | Síntoma | Causa | Solución |
 |---|---|---|
